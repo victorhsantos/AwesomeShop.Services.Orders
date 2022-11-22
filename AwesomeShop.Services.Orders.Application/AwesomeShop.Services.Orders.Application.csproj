@@ -10,6 +10,13 @@
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Commands\" />
+      <Folder Include="Dtos\InputModels\" />
+      <Folder Include="Dtos\ViewModels\" />
+      <Folder Include="Queries\" />
+    </ItemGroup>
+
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
