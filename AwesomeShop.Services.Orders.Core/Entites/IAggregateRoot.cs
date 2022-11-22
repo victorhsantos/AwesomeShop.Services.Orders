@@ -16,7 +16,5 @@ namespace AwesomeShop.Services.Orders.Core.Entites
             if (_events == null) _events = new List<IDomainEvent>();
             _events.Add(@event);
         }
-
-
     }
 }
