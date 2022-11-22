@@ -24,14 +24,14 @@ namespace AwesomeShop.Services.Orders.Core.Entites
             AddEvent(new OrderCreated(Id, TotalPrice, paymentInfo, Customer.FullName, Customer.Email));
         }
 
-        public decimal TotalPrice { get; set; }
-        public Customer Customer { get; set; }
-        public DeliveryAddress DeliveryAddress { get; set; }
-        public PaymentAddress PaymentAddress { get; set; }
-        public PaymentInfo PaymentInfo { get; set; }
-        public List<OrderItem> Items { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public OrderStatus Status { get; set; }
+        public decimal TotalPrice { get; private set; }
+        public Customer Customer { get; private set; }
+        public DeliveryAddress DeliveryAddress { get; private set; }
+        public PaymentAddress PaymentAddress { get; private set; }
+        public PaymentInfo PaymentInfo { get; private set; }
+        public List<OrderItem> Items { get; private set; }
+        public DateTime CreatedAt { get; private set; }
+        public OrderStatus Status { get; private set; }
 
 
         public void SetAsCompleted() => Status = OrderStatus.Completed;
