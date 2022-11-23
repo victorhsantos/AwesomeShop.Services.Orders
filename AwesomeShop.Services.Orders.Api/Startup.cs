@@ -21,11 +21,10 @@ namespace AwesomeShop.Services.Orders.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddHandlers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo {Title = "AwesomeShop.Services.Orders.Api", Version = "v1"});
-            });
+            services.AddHandlers()
+                    .AddMongoDb()
+                    .AddRepositories()
+                    .AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "AwesomeShop.Services.Orders.Api", Version = "v1" });});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
