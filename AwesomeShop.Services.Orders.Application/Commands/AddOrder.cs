@@ -19,7 +19,7 @@ namespace AwesomeShop.Services.Orders.Application.Commands
             new Customer(Customer.Id, Customer.FullName, Customer.Email),
             new DeliveryAddress(DeliveryAddress.Street, DeliveryAddress.Number, DeliveryAddress.City, DeliveryAddress.State, DeliveryAddress.PostalCode, DeliveryAddress.Country),
             new PaymentAddress(PaymentAddress.Street, PaymentAddress.Number, PaymentAddress.City, PaymentAddress.State, PaymentAddress.PostalCode, PaymentAddress.Country),
-            new PaymentInfo(PaymentInfo.CardName, PaymentInfo.FullName, PaymentInfo.Expiration, PaymentInfo.Cvv),
+            new PaymentInfo(PaymentInfo.CardNumber, PaymentInfo.FullName, PaymentInfo.Expiration, PaymentInfo.Cvv),
             Items.Select(i => new OrderItem(i.ProductId, i.Quantity, i.Price)).ToList());
 
     }
@@ -62,7 +62,7 @@ namespace AwesomeShop.Services.Orders.Application.Commands
 
     public class PaymentInfoInputModel
     {
-        public string CardName { get; set; }
+        public string CardNumber { get; set; }
         public string FullName { get; set; }
         public string Expiration { get; set; }
         public string Cvv { get; set; }
