@@ -25,6 +25,7 @@ namespace AwesomeShop.Services.Orders.Api
                     .AddMongoDb()
                     .AddRepositories()
                     .AddMessageBus()
+                    .AddSubscribers()
                     .AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "AwesomeShop.Services.Orders.Api", Version = "v1" });});
         }
 
