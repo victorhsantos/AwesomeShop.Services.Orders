@@ -26,7 +26,8 @@ namespace AwesomeShop.Services.Orders.Api
                     .AddRepositories()
                     .AddMessageBus()
                     .AddSubscribers()
-                    .AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "AwesomeShop.Services.Orders.Api", Version = "v1" });});
+                    .AddConsulCfg(Configuration)
+                    .AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "AwesomeShop.Services.Orders.Api", Version = "v1" }); });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +44,8 @@ namespace AwesomeShop.Services.Orders.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseConsul();
 
             app.UseAuthorization();
 
